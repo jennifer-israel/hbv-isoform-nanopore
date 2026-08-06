@@ -14,7 +14,7 @@
 # on the big box. Output: analysis/comparison/phase1_5_read_qc.tsv
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT=/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001
 RUNDATA=$PROJECT_ROOT/rundata
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 SAMPLES=$PROJECT_ROOT/config/samples.tsv
@@ -69,7 +69,7 @@ function n50(bcx,    i,cum,goal,mx) {   # N50 by BASES over length histogram
   return 0
 }
 END {
-  printf("# experiment=EXP26000892_cDNA003; pipeline_version=%s; generated=%s\n", VER, strftime("%Y-%m-%d")) > OUT
+  printf("# experiment=EXP26000559_cDNA001; pipeline_version=%s; generated=%s\n", VER, strftime("%Y-%m-%d")) > OUT
   printf("sample_key\tbarcode\tlib_id\treads\ttotal_bases\tlen_N50\tlen_median\tmean_qscore\tfrac_with_polyA\tmedian_polyA_len\n") >> OUT
   for (bc in reads) {
     sk=(bc in skey)?skey[bc]:bc; lb=(bc in lib)?lib[bc]:"NA"

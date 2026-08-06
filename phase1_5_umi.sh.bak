@@ -19,7 +19,7 @@
 #   dup rate = 1 - deduped/mapped ; unique molecules = deduped mapped reads
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT=/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001
 RUNDATA=$PROJECT_ROOT/rundata
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 MMI_INDEX=$ANALYSIS_ROOT/refs/hg38_hbv_2x_splice.mmi
@@ -43,7 +43,7 @@ WANT="$*"
 want(){ [ -z "$WANT" ] && return 0; for w in $WANT; do [ "$w" = "$1" ]||[ "$w" = "$2" ] && return 0; done; return 1; }
 
 if [ -z "$WANT" ] || [ ! -f "$SUMMARY" ]; then
-  printf '# experiment=EXP26000892_cDNA003; pipeline_version=%s; generated=%s\n' "$PIPELINE_VERSION" "$(date +%F)" > "$SUMMARY"
+  printf '# experiment=EXP26000559_cDNA001; pipeline_version=%s; generated=%s\n' "$PIPELINE_VERSION" "$(date +%F)" > "$SUMMARY"
   printf 'sample_key\tbarcode\tinput_reads\tfull_length_reads\tumi_wellformed_28nt\tunique_molecules\tdup_rate\n' >> "$SUMMARY"
 fi
 

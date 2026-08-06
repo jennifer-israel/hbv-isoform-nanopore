@@ -19,7 +19,7 @@
 # Shared: analysis/comparison/phase2_hbv_umi_summary.tsv
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT=/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 REF_2X=$ANALYSIS_ROOT/refs/hg38_hbv_2x.fa
 HBV=U95551.1_2x
@@ -43,7 +43,7 @@ WANT="$*"
 want(){ [ -z "$WANT" ] && return 0; for w in $WANT; do [ "$w" = "$1" ]||[ "$w" = "$2" ] && return 0; done; return 1; }
 
 if [ -z "$WANT" ] || [ ! -f "$SUMMARY" ]; then
-    printf '# experiment=EXP26000892_cDNA003; pipeline_version=%s; generated=%s\n' "$VER" "$(date +%F)" > "$SUMMARY"
+    printf '# experiment=EXP26000559_cDNA001; pipeline_version=%s; generated=%s\n' "$VER" "$(date +%F)" > "$SUMMARY"
     printf 'sample_key\tbarcode\thbv_primary_reads\thbv_umi_wellformed28\thbv_unique_molecules\thbv_dup_rate\n' >> "$SUMMARY"
 fi
 

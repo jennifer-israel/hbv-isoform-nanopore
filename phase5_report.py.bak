@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
-PROJECT_ROOT = Path("/data/EXP26000896")
+PROJECT_ROOT = Path("/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001")
 ANALYSIS = PROJECT_ROOT / "analysis"
 COMP = ANALYSIS / "comparison"
 SAMPLES = PROJECT_ROOT / "config" / "samples.tsv"
@@ -441,7 +441,7 @@ def main():
 
     html = f"""<!doctype html><html><head><meta charset="utf-8">
 <title>EXP26000559 cDNA HBV Baseline</title><style>{css}</style></head><body>
-<h1>HBV Detection Baseline with Standard cDNA (SQK-PCB114) — EXP26000892_cDNA003</h1>
+<h1>HBV Detection Baseline with Standard cDNA (SQK-PCB114) — EXP26000559_cDNA001</h1>
 <p><em>Generated {today} · pipeline {VERSION}</em></p>
 
 <div class="key">

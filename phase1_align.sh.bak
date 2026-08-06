@@ -18,7 +18,7 @@
 # inside tmux. Target box: c7i.8xlarge (32 vCPU / 64 GB) + 1 TB gp3 for analysis/.
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT=/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001
 RUNDATA=$PROJECT_ROOT/rundata
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 MMI_INDEX=$ANALYSIS_ROOT/refs/hg38_hbv_2x_splice.mmi
@@ -44,7 +44,7 @@ want() { [ -z "$WANT" ] && return 0; for w in $WANT; do [ "$w" = "$1" ] || [ "$w
 
 # (Re)create the summary header if starting a full run.
 if [ -z "$WANT" ] || [ ! -f "$SUMMARY" ]; then
-    printf '# experiment=EXP26000892_cDNA003; pipeline_version=%s; generated=%s\n' \
+    printf '# experiment=EXP26000559_cDNA001; pipeline_version=%s; generated=%s\n' \
         "$PIPELINE_VERSION" "$(date +%F)" > "$SUMMARY"
     printf 'sample_key\tbarcode\tlib_id\tprimary_reads\tprimary_mapped\tmapping_rate\tsupplementary\thbv_alignments\thbv_reads_mapq%s\n' "$MAPQ" >> "$SUMMARY"
 fi

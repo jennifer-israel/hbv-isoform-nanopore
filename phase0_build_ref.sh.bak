@@ -13,7 +13,7 @@
 #   hg38_hbv_2x_splice.mmi    minimap2 splice index (k15/w5, matches `-ax splice`)
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT=/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 REF_SRC=/home/ubuntu/matt_wolpert_claude_code_analysis/2026_05_14_HBV_LR_Transcript_Detect_EXP26000465/refs/hg38_hbv.fa
 REF_2X=$ANALYSIS_ROOT/refs/hg38_hbv_2x.fa

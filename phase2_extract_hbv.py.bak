@@ -29,7 +29,7 @@ try:
 except Exception:
     proportion_confint = None
 
-PROJECT_ROOT = Path("/data/EXP26000896")
+PROJECT_ROOT = Path("/home/ubuntu/matt_wolpert_claude_code_analysis/2026_07_02_EXP26000559_cDNA001")
 ANALYSIS = PROJECT_ROOT / "analysis"
 SAMPLES  = PROJECT_ROOT / "config" / "samples.tsv"
 HBV_CONTIG = "U95551.1_2x"
@@ -173,7 +173,7 @@ def main():
     (ANALYSIS / "comparison").mkdir(parents=True, exist_ok=True)
     out_tsv = ANALYSIS / "comparison" / "phase2_hbv_counts.tsv"
     with open(out_tsv, "w", newline="") as fh:
-        fh.write(f"# experiment=EXP26000892_cDNA003; pipeline_version={VERSION}; generated={datetime.date.today()}\n")
+        fh.write(f"# experiment=EXP26000559_cDNA001; pipeline_version={VERSION}; generated={datetime.date.today()}\n")
         w = csv.writer(fh, delimiter="\t")
         w.writerow(["sample_key", "barcode", "lib_id", "hbv_reads_all", f"hbv_reads_mapq{MAPQ_MIN}",
                     "hbv_unique_molecules", "composite_primary_mapped",
