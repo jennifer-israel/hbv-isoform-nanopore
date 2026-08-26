@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
-PROJECT_ROOT = Path("/data/EXP26000896")
+PROJECT_ROOT = Path("/data/EXP26000993")
 ANALYSIS = PROJECT_ROOT / "analysis"
 COMP = ANALYSIS / "comparison"
 SAMPLES = PROJECT_ROOT / "config" / "samples.tsv"

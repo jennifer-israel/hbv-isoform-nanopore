@@ -18,7 +18,7 @@
 # inside tmux. Target box: c7i.8xlarge (32 vCPU / 64 GB) + 1 TB gp3 for analysis/.
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000993}"
 RUNDATA=$PROJECT_ROOT/rundata
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 MMI_INDEX=$ANALYSIS_ROOT/refs/hg38_hbv_2x_splice.mmi

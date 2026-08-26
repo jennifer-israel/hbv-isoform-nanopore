@@ -34,7 +34,7 @@
 # comparable across libraries — that is what this normalises).
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000993}"
 ANALYSIS=$PROJECT_ROOT/analysis
 SAMPLES=$PROJECT_ROOT/config/samples.tsv
 OUT=$ANALYSIS/comparison/umi_saturation.tsv
@@ -47,7 +47,7 @@ for t in samtools umi_tools; do command -v $t >/dev/null || { echo "ERROR: $t no
 mkdir -p "$WORK" "$ANALYSIS/comparison"
 trap 'rm -rf "$WORK"' EXIT
 
-printf '# experiment=EXP26000892; generated=%s; seed=%s\n' "$(date +%F)" "$SEED" > "$OUT"
+printf '# experiment=%s; generated=%s; seed=%s\n' "$(basename "$PROJECT_ROOT")" "$(date +%F)" "$SEED" > "$OUT"
 printf 'sample_key\tfraction\treads\tunique_directional\tunique_exact\tdup_rate_directional\tmolecules_per_1k_reads\tmerge_ratio\n' >> "$OUT"
 
 WANT="$*"

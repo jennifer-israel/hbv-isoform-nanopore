@@ -19,7 +19,7 @@
 # Shared: analysis/comparison/phase2_hbv_umi_summary.tsv
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000896}"
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 REF_2X=$ANALYSIS_ROOT/refs/hg38_hbv_2x.fa
 HBV=U95551.1_2x

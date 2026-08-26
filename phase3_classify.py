@@ -46,7 +46,7 @@ from pathlib import Path
 import pysam
 import pandas as pd
 
-PROJECT_ROOT = Path("/data/EXP26000896")
+PROJECT_ROOT = Path("/data/EXP26000993")
 ANALYSIS = PROJECT_ROOT / "analysis"
 SAMPLES  = PROJECT_ROOT / "config" / "samples.tsv"
 VERSION  = "phase3-v1"

@@ -96,8 +96,8 @@ verify_pass () {
     fi
     # The classified barcode names must be OUR names (MW01..MW04 / EXP26000892_*).
     # If dorado fell back to a built-in kit we would see e.g. barcode01 / SQK-* here.
-    if ! grep -qE "(${ARR_NAME}_)?MW0[1-4]" "$summary"; then
-        echo "ERROR: summary $summary contains no MW01-MW04 classifications." >&2
+    if ! grep -qE "(${ARR_NAME}_)?barcode0[1-9]" "$summary"; then
+        echo "ERROR: summary $summary contains no barcode01-04 classifications." >&2
         echo "       The custom arrangement was probably ignored (see dorado#1548)." >&2
         echo "       Observed barcode values:" >&2
         awk -F'\t' 'NR==1{for(i=1;i<=NF;i++) if($i=="barcode") c=i; next} c{print $c}' "$summary" \

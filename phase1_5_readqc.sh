@@ -14,7 +14,7 @@
 # on the big box. Output: analysis/comparison/phase1_5_read_qc.tsv
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000896}"
 RUNDATA=$PROJECT_ROOT/rundata
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 SAMPLES=$PROJECT_ROOT/config/samples.tsv

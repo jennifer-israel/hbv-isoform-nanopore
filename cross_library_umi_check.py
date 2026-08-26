@@ -41,7 +41,7 @@ from pathlib import Path
 
 import pysam
 
-PROJECT_ROOT = Path("/data/EXP26000896")
+PROJECT_ROOT = Path("/data/EXP26000993")
 ANALYSIS = PROJECT_ROOT / "analysis"
 SAMPLES = PROJECT_ROOT / "config" / "samples.tsv"
 UMI_LEN = 28

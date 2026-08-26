@@ -17,7 +17,7 @@
 #   bash scripts/phase2b_dedup_read_ids.sh <sample_key> ...   # subset
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000896}"
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 
 for t in samtools umi_tools; do command -v "$t" >/dev/null || { echo "ERROR: $t not on PATH"; exit 1; }; done

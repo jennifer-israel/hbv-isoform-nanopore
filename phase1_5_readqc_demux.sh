@@ -30,7 +30,7 @@
 # per-read arrays. The summary is ~46 GB; expect 10-25 min.
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000993}"
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 SAMPLES=$PROJECT_ROOT/config/samples.tsv
 SS=${SS:-$PROJECT_ROOT/demux/strict/sequencing_summary.txt}

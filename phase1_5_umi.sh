@@ -19,7 +19,7 @@
 #   dup rate = 1 - deduped/mapped ; unique molecules = deduped mapped reads
 set -euo pipefail
 
-PROJECT_ROOT=/data/EXP26000896
+PROJECT_ROOT="${PROJECT_ROOT:-/data/EXP26000896}"
 RUNDATA=$PROJECT_ROOT/rundata
 ANALYSIS_ROOT=$PROJECT_ROOT/analysis
 MMI_INDEX=$ANALYSIS_ROOT/refs/hg38_hbv_2x_splice.mmi
