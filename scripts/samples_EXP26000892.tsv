@@ -1,0 +1,8 @@
+# experiment=EXP26000892_cDNA003_HBV_RNA_enrichment_pilot; generated=2026-07-27
+# Custom PCR barcodes (not an ONT native barcoding kit) - demultiplexed computationally.
+# `barcode` = the fastq_pass subfolder name; `barcode_seq` is informational here.
+barcode	lib_id	sample_name	sample_key	input_ng	polya	pcr	barcode_seq
+custom_bc01	SeqLib5550	100ng_input	SeqLib5550_100ng_polyA_17	100	yes	17	AAGAAAGTTGTCGGTGTCTTTGTG
+custom_bc02	SeqLib5551	10ng_input	SeqLib5551_10ng_polyA_17	10	yes	17	TCGATTCCGTTTGTAGTCGTCTGT
+custom_bc03	SeqLib5552	1ng_input	SeqLib5552_1ng_polyA_21	1	yes	21	GAGTCTTGTGTCCCAGTTACCAGG
+custom_bc04	SeqLib5553	0.1ng_input	SeqLib5553_0.1ng_polyA_24	0.1	yes	24	TTCGGATTCTATCGTGTTTCCCTA

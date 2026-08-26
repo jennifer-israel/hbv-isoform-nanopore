@@ -1,0 +1,22 @@
+# experiment=EXP26000993_cDNA005_serum_plasma_enrichment_pilot
+# Benchling: cDNA005_serum/plasma enrichment pilot (EXP26000992) / BFX request EXP26000993
+# TwistPool0184; 375 ng of each library into hybridisation capture (equal mass)
+#
+# NOT an input titration - all four libraries are 1 ng. Sample-type comparison:
+#   human plasma vs chimeric-mouse serum vs PHH, at fixed input.
+#
+# polya: artificial = enzymatic PAP tailing on serum/plasma RNA (fragmented, lacks tails)
+#        selected   = oligo-dT selection on intact cellular RNA (the cDNA003 route)
+#        These are NOT comparable to each other.
+#
+# custom_bc03 = SeqLib5552, carried over from EXP26000892 (cDNA003). Same physical
+#        library, re-pooled and re-captured. Cross-run technical replicate.
+#        In EXP26000892 it gave 3,800 UMI molecules / 1,090 distinct coordinates
+#        at 21.2M reads; here it received only 6.9M, so depth differs ~3x.
+#
+# pcr = second-anneal cycle count (a fixed 5-cycle block precedes it).
+barcode	lib_id	sample_name	sample_key	input_ng	polya	pcr	barcode_seq
+custom_bc01	SeqLib5575	human_plasma_pool	SeqLib5575_humanPlasma_1ng_20	1	artificial	20	AAGAAAGTTGTCGGTGTCTTTGTG
+custom_bc02	SeqLib5576	yecuris1_g21	SeqLib5576_yecuris1_1ng_20	1	artificial	20	TCGATTCCGTTTGTAGTCGTCTGT
+custom_bc03	SeqLib5552	cDNA003_carryover	SeqLib5552_cDNA003_1ng_21	1	selected	21	GAGTCTTGTGTCCCAGTTACCAGG
+custom_bc04	SeqLib5577	yecuris2_PBS	SeqLib5577_yecuris2_1ng_20	1	artificial	20	TTCGGATTCTATCGTGTTTCCCTA

@@ -1,0 +1,41 @@
+# dorado custom barcode arrangement - EXP26001055 / cDNA006
+#
+# SIX libraries (cDNA003/cDNA005 had four). TX01..TX06 map to SeqLib5660..SeqLib5665
+# IN ORDER; see samples_EXP26001055.tsv.
+#
+# NAMING. The six oligos are the REVERSE COMPLEMENTS of ONT native barcodes NB05-NB10
+# (verified base-for-base). Naming them NB05.. or BC05.. is rejected with "Custom
+# barcode names already exist" - the same failure that hit cDNA003 with BC01-BC04.
+#
+# ORIENTATION. Benchling records these as the reverse complement of ONT canonical;
+# cDNA003/005 recorded theirs forward. Verified against reads: both orientations occur
+# at a 0.97 ratio, so dorado resolves either. Sequences below are AS RECORDED.
+#
+# MASKS unchanged from EXP26000892 - same construct, same P5/P7 and SSPII/CRTA flanks.
+# SCORING identical to EXP26000892 so results stay comparable across runs.
+
+[arrangement]
+name = "EXP26001055"
+kit = "EXP26001055"
+
+mask1_front = "AATGATACGGCGACCACCGAGGTGCTG"
+mask1_rear  = "TTAACCTTTTCTGTTGGTGCTGATATTGC"
+mask2_front = "CAAGCAGAAGACGGCATACGAGATGGTGCTG"
+mask2_rear  = "TTAACCTCTTGCCTGTCGCTCTATC"
+
+barcode1_pattern = "TY%02i"
+barcode2_pattern = "TY%02i"
+first_index = 1
+last_index  = 6
+
+[scoring]
+max_barcode_penalty      = 6
+min_barcode_penalty_dist = 4
+min_separation_only_dist = 6
+flank_left_pad           = 5
+flank_right_pad          = 5
+front_barcode_window     = 200
+rear_barcode_window      = 200
+barcode_end_proximity    = 200
+min_flank_score          = 0.6
+midstrand_flank_score    = 0.95
