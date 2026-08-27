@@ -1,0 +1,28 @@
+# EXP26001054 / cDNA006 — SeqPool0188, flow cell PBM77696, SQK-LSK114, FLO-PRO114M
+# Built from the Benchling BFX request (cDNA006_HBV Translational BFX, 8/7/2026).
+#
+# UNVERIFIED FIELDS — the Benchling entry does not state them. input_ng and pcr are
+# placeholders (NA) except SeqLib5665, which the description gives as 10 ng. The PCR
+# cycle count is the single most important missing value, because "did reducing the PCR
+# cycles move jackpotting in the right direction" cannot be answered without knowing what
+# it was reduced FROM and TO. cDNA003 used 17-24 cycles depending on input.
+#
+# barcode_seq are the oligos AS RECORDED in Benchling. They are the reverse complements
+# of ONT native barcodes NB05-NB10 respectively. Verify orientation against real reads
+# before trusting the demux.
+#
+# DESIGN. Three arms in one pool:
+#   carrier RNA test   SeqLib5661/5662/5663 — Yecuris untreated, spike-in pre-extraction
+#                      vs post-extraction vs none. This is the run's primary question.
+#   patient samples    SeqLib5660 (nucleoside-analog treated) and SeqLib5664 (untreated).
+#                      No carrier RNA. Added for representation, protocol not optimised.
+#   intracellular ctrl SeqLib5665 — PHH poly(A), same starting material as cDNA003, so it
+#                      is the cross-run anchor the way SeqLib5552 was for cDNA005.
+#
+barcode	lib_id	sample_name	sample_key	input_ng	polya	pcr	barcode_seq
+custom_bc01	SeqLib5660	Human Nuc-treated	SeqLib5660_humanNucTx	NA	enzymatic	NA	CTTGTCCAGGGTTTGTGTAACCTT
+custom_bc02	SeqLib5661	YecgNT_carrierRNA_preextract	SeqLib5661_yecNT_carrierPre	NA	enzymatic	NA	TTCTCGCAAAGGCAGAAAGTAGTC
+custom_bc03	SeqLib5662	YecgNT_carrierRNA_postextract	SeqLib5662_yecNT_carrierPost	NA	enzymatic	NA	GTGTTACCGTGGGAATGAATCCTT
+custom_bc04	SeqLib5663	YecgNT_nocarrier	SeqLib5663_yecNT_nocarrier	NA	enzymatic	NA	TTCAGGGAACAAACCAAGTTACGT
+custom_bc05	SeqLib5664	Human serum non-nuc treated	SeqLib5664_humanSerumUntx	NA	enzymatic	NA	AACTAGGCACAGCGAGTCTTGGTT
+custom_bc06	SeqLib5665	intracellular PHH PolyA enriched Pool	SeqLib5665_PHH_10ng	10	oligo_dT	NA	AAGCGTTGAAACCTTTGTCCTCTC

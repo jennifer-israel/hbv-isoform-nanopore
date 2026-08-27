@@ -1,0 +1,30 @@
+# EXP26001055 / cDNA007 - blocking oligo v1 vs v2 across three PHH inputs.
+# SeqPool0189, flow cell PBM77529, run 20260813_1441_P2I-00507-B.
+# Built from the Benchling BFX request (cDNA007_HBV Translational BFX, 8/7/2026).
+#
+# DESIGN. A clean 2 x 3 factorial: blocker version (v1, v2) x input (10 ng, 1 ng, 100 pg).
+# All six libraries are the SAME intracellular PHH poly(A)-enriched RNA pool - identical
+# nine source entities (RNA-TCB-0238-0524 through 0368-0588), the same pool used for
+# cDNA006 SeqLib5665 and cDNA003. There is therefore NO biological variation between
+# libraries; every difference is blocker, input, or noise.
+#
+# PRIMARY ENDPOINT. Whether the new blockers reduce mid-read barcode / concatemer events.
+# That is measured directly by filter_concatemers.py, and cDNA003 already provides an
+# input-matched baseline measured with the same code at the same settings:
+#     10 ng  (SeqLib5551)  0.91%
+#     1 ng   (SeqLib5552)  0.97%
+#     100 pg (SeqLib5553)  0.71%
+# so v1 and v2 can be compared against those at matched input. cDNA003 did NOT use the
+# reduced PCR cycling that cDNA007 does, so blocker and cycle count are confounded when
+# comparing across experiments - the clean comparison is v1 vs v2 WITHIN this run.
+#
+# pcr is NA: the entry says cycling was reduced but does not state the number. Needed to
+# separate blocker effect from cycle effect against the cDNA003 baseline.
+#
+barcode	lib_id	sample_name	sample_key	input_ng	polya	pcr	barcode_seq
+custom_bc01	SeqLib5666	Blocker_v1_10ng	SeqLib5666_blockerV1_10ng	10	oligo_dT	NA	AGAACGACTTCCATACTCGTGTGA
+custom_bc02	SeqLib5667	Blocker_v1_1ng	SeqLib5667_blockerV1_1ng	1	oligo_dT	NA	AACGAGTCTCTTGGGACCCATAGA
+custom_bc03	SeqLib5668	Blocker_v1_100pg	SeqLib5668_blockerV1_100pg	0.1	oligo_dT	NA	AGGTCTACCTCGCTAACACCACTG
+custom_bc04	SeqLib5669	Blocker_v2_10ng	SeqLib5669_blockerV2_10ng	10	oligo_dT	NA	CGTCAACTGACAGTGGTTCGTACT
+custom_bc05	SeqLib5670	Blocker_v2_1ng	SeqLib5670_blockerV2_1ng	1	oligo_dT	NA	ACCCTCCAGGAAAGTACCTCTGAT
+custom_bc06	SeqLib5671	Blocker_v2_100pg	SeqLib5671_blockerV2_100pg	0.1	oligo_dT	NA	CCAAACCCAACAACCTAGATAGGC
